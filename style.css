@@ -1,0 +1,514 @@
+/* =========================================================
+   Jacmel Tourisme — style.css
+   Feuille de style commune à toutes les pages
+   ========================================================= */
+
+/* ---------- Variables (mode clair) ---------- */
+:root {
+  --color-bg: #faf7f2;
+  --color-bg-alt: #ffffff;
+  --color-text: #2b2b2b;
+  --color-text-muted: #5c5c5c;
+  --color-primary: #0f7a6c;
+  --color-primary-dark: #0a5c51;
+  --color-accent: #e08a2c;
+  --color-border: #e2ddd3;
+  --color-card-bg: #ffffff;
+  --color-header-bg: rgba(255, 255, 255, 0.95);
+  --color-footer-bg: #12312d;
+  --color-footer-text: #e7efed;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* ---------- Variables (mode nuit) ---------- */
+body.dark-mode {
+  --color-bg: #14181b;
+  --color-bg-alt: #1c2226;
+  --color-text: #f1f1f1;
+  --color-text-muted: #b8bcbf;
+  --color-primary: #2fbfa6;
+  --color-primary-dark: #23a08a;
+  --color-accent: #f0a84e;
+  --color-border: #2c3438;
+  --color-card-bg: #1e2529;
+  --color-header-bg: rgba(20, 24, 27, 0.95);
+  --color-footer-bg: #0b0f11;
+  --color-footer-text: #d7dbdd;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+/* ---------- Header / Navbar ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-header-bg);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.9rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-menu li a {
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 0.4rem 0.2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: var(--color-primary);
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+  width: 100%;
+}
+
+.btn-theme {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  margin-left: 1rem;
+}
+
+.btn-theme:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--color-primary);
+  margin-left: 1rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.92;
+}
+
+/* ---------- Intro ---------- */
+.intro {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.intro h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.intro p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+/* ---------- Main content generic ---------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+main > h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Diaporama / Slideshow ---------- */
+.diaporama-container {
+  position: relative;
+  max-width: 900px;
+  height: 480px;
+  margin: 2rem auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: #000;
+}
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+.slideshow.active-slide {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* dots navigation, added dynamically by script.js */
+.slideshow-dots {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.slideshow-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slideshow-dots span.active-dot {
+  background-color: #fff;
+}
+
+/* ---------- Cards / Grid ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.4rem;
+}
+
+.card-content h2,
+.card-content h3 {
+  margin-bottom: 0.7rem;
+}
+
+.card-content p {
+  color: var(--color-text-muted);
+  font-size: 0.96rem;
+  white-space: pre-line;
+}
+
+.gallery-item {
+  margin-top: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* ---------- Formulaire de contact ---------- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 122, 108, 0.15);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+  border-color: #d94b4b;
+  box-shadow: 0 0 0 3px rgba(217, 75, 75, 0.15);
+}
+
+.error-message {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #d94b4b;
+}
+
+.form-group input.invalid + .error-message,
+.form-group textarea.invalid + .error-message {
+  display: block;
+}
+
+/* état succès, basculé par script.js */
+.form-group.success .error-message {
+  display: block;
+  color: var(--color-primary);
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.form-success-banner {
+  display: none;
+  background-color: rgba(15, 122, 108, 0.12);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.form-success-banner.show {
+  display: block;
+}
+
+/* ---------- Bouton retour en haut ---------- */
+#backtoTop {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: var(--transition);
+  z-index: 999;
+}
+
+#backtoTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backtoTop:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  text-align: center;
+  padding: 1.6rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+footer #datetime {
+  margin-top: 0.3rem;
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+
+//* Bannè mesaj konfimasyon an */
+.form-success-banner {
+  display: none; /* Kache pa defo */
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.form-success-banner.show {
+  display: block !important;
+}
+
+/* Koulè wouj pou chan ki gen erè yo */
+input.invalid, textarea.invalid {
+  border: 2px solid #dc3545 !important;
+}
