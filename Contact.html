@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jacmel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bgMusic" loop style="display: none;">
+         <source src="Musiques/jacmel.m4a" type="audio/mpeg">
+    </audio>
+
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Jacmel Tourisme</a>
+            <ul class="nav-menu">
+                 <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="SitesTouristique.html" class="active">Sites touristiques</a></li>
+                <li><a href="Galerie.html">Galerie</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <button id="themeToggle" class="btn-theme">🌙 Mode nuit</button>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contactez-nous</h1>
+
+        <form id="form-contact" class="contact-form" novalidate>
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" placeholder="Votre nom">
+                <span class="error-message" id="error-nom">Veuillez renseigner votre nom.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" placeholder="Votre prénom">
+                <span class="error-message" id="error-prenom">Veuillez renseigner votre prénom.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" placeholder="exemple@mail.com">
+                <span class="error-message" id="error-email">Veuillez entrer une adresse e-mail valide.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" placeholder="+509 ...">
+                <span class="error-message" id="error-telephone">Veuillez indiquer un numéro de téléphone.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" rows="5" placeholder="Votre message..."></textarea>
+                <span class="error-message" id="error-message"> Merci de nous avoir contactés. </span>.</span>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+
+    <button id="backtoTop">↑</button>
+
+    <footer>
+        <p>&copy; 2026 Jacmel Tourisme - Tous droits réservés.</p>
+        <p id="datetime"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

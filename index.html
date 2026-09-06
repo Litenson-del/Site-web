@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jacmel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bgMusic" loop style="display: none;">
+       <source src="Musiques/jacmel.m4a" type="audio/mpeg">
+    </audio>
+
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Jacmel Tourisme</a>
+            <ul class="nav-menu">
+                 <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="SitesTouristique.html" class="active">Sites touristiques</a></li>
+                <li><a href="Galerie.html">Galerie</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <button id="themeToggle" class="btn-theme">🌙 Mode nuit</button>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bienvenue à Jacmel</h1>
+            <p>Perle du Sud-Est d'Haïti</p>
+        </section>
+
+        <section class="intro">
+            <h2>Découvrez Jacmel</h2>
+            <p>Jacmel est une ville côtière haïtienne réputée pour son carnaval, son artisanat, ses plages et son architecture coloniale. Laissez-vous charmer par son authenticité.</p>
+        </section>
+
+        <!-- Diaporama automatique -->
+        <section class="diaporama-container">
+            <div class="slideshow">
+                <img src="images/logo.jpg" alt="Jacmel1"/>
+                <div class="caption">Jacmel</div>   
+            </div>
+            <div class="slideshow">
+                <img src="images/meri.jpg" alt="Jacmel2 "/>
+                <div class="caption">Jacmel</div>
+            </div>
+            <div class="slideshow">
+                <img src="images/bouka.jpg" alt="Jacmel3 "/>
+                <div class="caption">Jacmel</div>
+            </div>
+        </section>
+    </main>
+    <button id="backtoTop">↑</button>
+
+    <footer>
+        <p>&copy; 2026 Jacmel Tourisme</p>
+        <p id="datetime"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
